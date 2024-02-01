@@ -33,22 +33,22 @@ pipeline {
                 }
             }
         }
-        stage('Install dependencies') {
-            steps {
-                sh """
-                    npm install
-                """
-            }
-        }
-        stage('Build') {
-            steps {
-                sh """
-                    ls -la
-                    zip -q -r catalogue.zip ./* -x ".git" -x "*.zip"
-                    ls -ltr
-                """
-            }
-        }
+        // stage('Install dependencies') {
+        //     steps {
+        //         sh """
+        //             npm install
+        //         """
+        //     }
+        // }
+        // stage('Build') {
+        //     steps {
+        //         sh """
+        //             ls -la
+        //             zip -q -r catalogue.zip ./* -x ".git" -x "*.zip"
+        //             ls -ltr
+        //         """
+        //     }
+        // }
         stage('Deploy') {
             steps {
                 sh """
